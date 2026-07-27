@@ -1,7 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+/* ===========================
+   GOOGLE FONT
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* ===========================
-   GLOBAL
+   RESET
 =========================== */
 
 *{
@@ -13,27 +17,7 @@
 body{
     font-family:'Inter',sans-serif;
     background:#D9D9D9;
-    color:#000;
-}
-
-a{
-    text-decoration:none;
-    color:white;
-}
-
-ul{
-    list-style:none;
-}
-
-img{
-    display:block;
-    max-width:100%;
-}
-
-button{
-    cursor:pointer;
-    border:none;
-    font-family:'Inter',sans-serif;
+    color:#363636;
 }
 
 /* ===========================
@@ -42,15 +26,14 @@ button{
 
 header{
     text-align:center;
-    padding:40px 0 20px;
+    padding:45px 0 25px;
 }
 
 header h1{
-    color:white;
-    font-size:72px;
+    font-size:60px;
     font-style:italic;
-    font-weight:800;
-    letter-spacing:2px;
+    font-weight:700;
+    color:white;
 }
 
 /* ===========================
@@ -59,27 +42,35 @@ header h1{
 
 nav{
     width:90%;
-    max-width:1200px;
-    margin:0 auto 35px;
+    max-width:1100px;
+    margin:0 auto 30px;
     background:#363636;
-    border-radius:35px;
+    border-radius:18px;
 }
 
 nav ul{
     display:flex;
     justify-content:center;
     align-items:center;
-    gap:70px;
-    padding:22px;
+    list-style:none;
+}
+
+nav li{
+    margin:0 35px;
 }
 
 nav a{
-    font-size:24px;
+    display:block;
+    color:white;
+    text-decoration:none;
+    font-size:20px;
     font-weight:600;
+    padding:18px 0;
     transition:.3s;
 }
 
-nav a:hover{
+nav a:hover,
+nav a.active{
     color:#C93333;
 }
 
@@ -89,18 +80,129 @@ nav a:hover{
 
 .container{
     width:90%;
-    max-width:1200px;
-    margin:0 auto 40px;
+    max-width:1100px;
+    margin:auto;
     background:white;
-    border-radius:35px;
-    padding:45px;
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    border-radius:20px;
+    padding:35px;
+    min-height:600px;
 }
 
 .container h2{
+    font-size:34px;
+    margin-bottom:30px;
+    color:#363636;
+}
+
+/* ===========================
+   TABLE
+=========================== */
+
+table{
+    width:100%;
+    border-collapse:separate;
+    border-spacing:0 18px;
+}
+
+thead th{
+    text-align:left;
+    font-size:22px;
+    font-weight:700;
+    color:#1f1f1f;
+    padding-bottom:10px;
+    white-space:nowrap;
+}
+
+tbody tr{
+    background:#ECECEC;
+}
+
+tbody td{
+    padding:18px 20px;
+    font-size:20px;
+    vertical-align:middle;
+}
+
+tbody tr td:first-child{
+    border-radius:18px 0 0 18px;
+    font-weight:500;
+}
+
+tbody tr td:last-child{
+    border-radius:0 18px 18px 0;
+}
+/* ===========================
+   BUTTONS
+=========================== */
+
+.rent-button,
+.remove-button,
+.login-button,
+.register-button,
+.profile-buttons button{
+
+    width:150px;
+    height:55px;
+
+    background:#7A654F;
+    color:#FFFFFF;
+
+    border:none;
+    border-radius:18px;
+
+    font-size:20px;
+    font-weight:700;
+
+    cursor:pointer;
+    transition:.3s;
+}
+
+.rent-button:hover,
+.remove-button:hover,
+.login-button:hover,
+.register-button:hover,
+.profile-buttons button:hover{
+
+    background:#5F4E3D;
+}
+
+.rent-button:disabled{
+
+    cursor:not-allowed;
+    opacity:0.7;
+}
+
+/* ===========================
+   TABLE COLUMNS
+=========================== */
+
+.status{
     text-align:center;
-    font-size:42px;
-    margin-bottom:40px;
+}
+
+.status img{
+    width:30px;
+    height:30px;
+}
+
+th:nth-child(2),
+td:nth-child(2){
+
+    width:170px;
+    text-align:left;
+}
+
+th:nth-child(3),
+td:nth-child(3){
+
+    width:180px;
+}
+
+th:last-child,
+td:last-child{
+
+    width:220px;
+    text-align:center;
 }
 
 /* ===========================
@@ -108,295 +210,164 @@ nav a:hover{
 =========================== */
 
 .login-wrapper{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
+
     display:flex;
     justify-content:space-between;
-    align-items:flex-start;
-    gap:60px;
+    gap:40px;
+    margin-top:20px;
 }
 
 .login-box{
-    background:white;
-    width:100%;
-    border-radius:30px;
-    padding:40px;
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
-}
 
-.login-box h2{
-    text-align:center;
-    margin-bottom:30px;
-    font-size:34px;
-}
-
-form{
-    display:flex;
-    flex-direction:column;
-}
-
-label{
-    font-size:18px;
-    margin-bottom:8px;
-    margin-top:18px;
-    font-weight:500;
-}
-
-input{
-    padding:15px;
-    border:1px solid #bdbdbd;
-    border-radius:15px;
-    font-size:16px;
-    outline:none;
-    transition:.2s;
-}
-
-input:focus{
-    border:2px solid #363636;
-}
-
-/* ===========================
-   BUTTONS
-=========================== */
-
-.dark-btn{
-    margin-top:30px;
-    background:#363636;
-    color:white;
-    padding:15px;
-    border-radius:15px;
-    font-size:18px;
-    transition:.3s;
-}
-
-.dark-btn:hover{
-    background:#4b4b4b;
-}
-
-.red-btn{
-    background:#C93333;
-    color:white;
-    padding:15px 28px;
-    border-radius:15px;
-    transition:.3s;
-}
-
-.red-btn:hover{
-    background:#a32626;
-}
-
-/* ===========================
-   MOVIE SECTION
-=========================== */
-
-.movie-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:30px;
-}
-
-.movie-card{
-    background:#f7f7f7;
-    border-radius:25px;
-    padding:20px;
-    display:flex;
-    gap:20px;
-    align-items:center;
-}
-
-.movie-poster{
-    width:130px;
-    height:180px;
-    border-radius:15px;
-    object-fit:cover;
-}
-
-.movie-info{
     flex:1;
+
+    background:#ECECEC;
+
+    padding:35px;
+
+    border-radius:18px;
 }
 
-.movie-info h3{
+.login-box h3{
+
     font-size:28px;
-    margin-bottom:10px;
+    margin-bottom:25px;
 }
 
-.movie-info p{
-    font-size:18px;
-    margin-bottom:8px;
-    color:#555;
-}
+.login-box label{
 
-.movie-info button{
+    display:block;
+
     margin-top:15px;
-}
-/* ===========================
-   AVAILABLE MOVIES PAGE
-=========================== */
-
-.movies-container{
-    display:flex;
-    flex-direction:column;
-    gap:25px;
-}
-
-.movie-row{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:#f5f5f5;
-    border-radius:20px;
-    padding:20px 25px;
-}
-
-.movie-left{
-    display:flex;
-    align-items:center;
-    gap:25px;
-}
-
-.movie-left img{
-    width:110px;
-    height:150px;
-    border-radius:15px;
-    object-fit:cover;
-}
-
-.movie-details h3{
-    font-size:28px;
-    margin-bottom:10px;
-}
-
-.movie-details p{
-    font-size:18px;
-    color:#666;
-    margin-bottom:6px;
-}
-
-.movie-right{
-    display:flex;
-    align-items:center;
-}
-
-/* ===========================
-   YOUR MOVIES PAGE
-=========================== */
-
-.rented-movies{
-    display:flex;
-    flex-direction:column;
-    gap:25px;
-}
-
-.rented-card{
-    background:#f5f5f5;
-    border-radius:20px;
-    padding:20px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.rented-info{
-    display:flex;
-    align-items:center;
-    gap:25px;
-}
-
-.rented-info img{
-    width:100px;
-    height:145px;
-    object-fit:cover;
-    border-radius:15px;
-}
-
-.rented-text h3{
-    font-size:26px;
     margin-bottom:8px;
-}
 
-.rented-text p{
-    color:#666;
-    margin-bottom:6px;
     font-size:18px;
+    font-weight:600;
 }
 
-.remove-button{
-    background:#C93333;
-    color:white;
-    padding:14px 28px;
-    border-radius:14px;
+.login-box input{
+
+    width:100%;
+    height:50px;
+
+    border:1px solid #CFCFCF;
+    border-radius:12px;
+
+    padding:0 15px;
+
     font-size:17px;
-    transition:.3s;
+
+    outline:none;
 }
 
-.remove-button:hover{
-    background:#a82323;
+.login-box input:focus{
+
+    border-color:#7A654F;
 }
 
+.login-box button{
+
+    margin-top:25px;
+}
+
+/* ===========================
+   YOUR MOVIES
+=========================== */
+
+.time-box{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:15px;
+}
+
+.time-button{
+
+    width:35px;
+    height:35px;
+
+    border:none;
+    border-radius:50%;
+
+    background:#7A654F;
+    color:white;
+
+    font-size:20px;
+    cursor:pointer;
+}
+
+.time-button:hover{
+
+    background:#5F4E3D;
+}
+
+.time-value{
+
+    font-size:20px;
+    font-weight:600;
+    min-width:45px;
+    text-align:center;
+}
+
+/* ===========================
+   FORM BUTTONS
+=========================== */
+
+.login-button,
+.register-button{
+
+    display:block;
+    margin-top:30px;
+}
 /* ===========================
    PROFILE PAGE
 =========================== */
 
-.profile-container{
+.profile-content{
     display:flex;
-    gap:60px;
+    justify-content:space-between;
     align-items:flex-start;
+    gap:60px;
+    margin-top:20px;
+}
+
+.profile-left{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
 
 .profile-image{
-    width:260px;
-    height:260px;
+    width:220px;
+    height:220px;
     border-radius:50%;
     object-fit:cover;
-    border:8px solid #363636;
-}
-
-.profile-information{
-    flex:1;
-}
-
-.profile-information h2{
-    text-align:left;
-    margin-bottom:20px;
-    font-size:40px;
-}
-
-.profile-information p{
-    font-size:22px;
-    margin-bottom:18px;
+    border:5px solid #363636;
+    background:#ECECEC;
 }
 
 .profile-buttons{
     display:flex;
-    gap:20px;
-    margin-top:40px;
+    flex-direction:column;
+    gap:15px;
+    margin-top:30px;
 }
 
-.edit-button{
-    background:#363636;
-    color:white;
-    padding:15px 35px;
-    border-radius:15px;
-    font-size:18px;
-    transition:.3s;
+.profile-right{
+    flex:1;
+    padding-top:20px;
 }
 
-.edit-button:hover{
-    background:#4a4a4a;
+.profile-right p{
+    font-size:22px;
+    margin-bottom:25px;
+    font-weight:500;
 }
 
-.logout-button{
-    background:#C93333;
-    color:white;
-    padding:15px 35px;
-    border-radius:15px;
-    font-size:18px;
-    transition:.3s;
-}
-
-.logout-button:hover{
-    background:#a82323;
+.profile-right strong{
+    display:inline-block;
+    width:120px;
 }
 
 /* ===========================
@@ -404,270 +375,76 @@ input:focus{
 =========================== */
 
 footer{
+    width:100%;
     margin-top:50px;
     background:#363636;
-    color:white;
-    padding:30px 50px;
+    color:#FFFFFF;
+    padding:20px 8%;
     display:flex;
     justify-content:space-between;
     align-items:center;
     font-size:18px;
 }
 
-footer p{
-    margin:0;
-}
-
 /* ===========================
-   IMAGE PLACEHOLDERS
-
-   Replace these with your own images:
-
-   images/logo.png
-   images/profile.jpg
-   images/movie1.jpg
-   images/movie2.jpg
-   images/movie3.jpg
-   images/movie4.jpg
-   images/movie5.jpg
-
-=========================== */
-
-.logo-image{
-    width:220px;
-    margin:0 auto 20px;
-}
-
-.poster-small{
-    width:110px;
-    height:150px;
-    object-fit:cover;
-    border-radius:15px;
-}
-
-.poster-large{
-    width:150px;
-    height:220px;
-    object-fit:cover;
-    border-radius:18px;
-}
-/* ===========================
-   TABLE STYLING
-=========================== */
-
-table{
-    width:100%;
-    border-collapse:collapse;
-    margin-top:20px;
-}
-
-thead{
-    background:#363636;
-    color:white;
-}
-
-th{
-    padding:18px;
-    font-size:20px;
-    font-weight:600;
-    text-align:left;
-}
-
-td{
-    padding:18px;
-    background:#f7f7f7;
-    border-bottom:15px solid white;
-    font-size:18px;
-    vertical-align:middle;
-}
-
-td img{
-    width:90px;
-    border-radius:12px;
-}
-
-tr:last-child td{
-    border-bottom:none;
-}
-
-/* ===========================
-   GENERAL BUTTON EFFECTS
+   GENERAL STYLES
 =========================== */
 
 button{
-    transition:0.3s ease;
+    font-family:'Inter',sans-serif;
 }
 
-button:hover{
-    transform:scale(1.05);
+input{
+    font-family:'Inter',sans-serif;
 }
 
-button:active{
-    transform:scale(0.98);
-}
-
-/* ===========================
-   CARD HOVER
-=========================== */
-
-.movie-card,
-.movie-row,
-.rented-card,
-.login-box{
-    transition:0.3s ease;
-}
-
-.movie-card:hover,
-.movie-row:hover,
-.rented-card:hover,
-.login-box:hover{
-    transform:translateY(-5px);
-    box-shadow:0 12px 30px rgba(0,0,0,.12);
+img{
+    display:block;
 }
 
 /* ===========================
-   INPUT EFFECTS
+   HOVER EFFECTS
 =========================== */
 
-input::placeholder{
-    color:#999;
+tbody tr{
+    transition:.2s;
 }
 
-input:hover{
-    border-color:#888;
+tbody tr:hover{
+    transform:scale(1.01);
 }
 
 /* ===========================
-   PAGE TITLES
+   RESPONSIVE DESIGN
 =========================== */
 
-.page-title{
-    text-align:center;
-    font-size:46px;
-    font-weight:700;
-    margin-bottom:35px;
-}
-
-/* ===========================
-   SPACING HELPERS
-=========================== */
-
-.mt-20{
-    margin-top:20px;
-}
-
-.mt-30{
-    margin-top:30px;
-}
-
-.mt-40{
-    margin-top:40px;
-}
-
-.mb-20{
-    margin-bottom:20px;
-}
-
-.mb-30{
-    margin-bottom:30px;
-}
-
-.text-center{
-    text-align:center;
-}
-
-/* ===========================
-   RESPONSIVE
-=========================== */
-
-@media(max-width:1100px){
-
-    .movie-grid{
-        grid-template-columns:1fr;
-    }
-
-    .profile-container{
-        flex-direction:column;
-        align-items:center;
-        text-align:center;
-    }
-
-    .profile-information h2{
-        text-align:center;
-    }
-
-    .profile-buttons{
-        justify-content:center;
-    }
-
-}
-
-@media(max-width:900px){
-
-    nav ul{
-        gap:30px;
-    }
-
-    nav a{
-        font-size:20px;
-    }
+@media (max-width:900px){
 
     .login-wrapper{
         flex-direction:column;
     }
 
-    .movie-row,
-    .rented-card{
+    .profile-content{
         flex-direction:column;
-        align-items:flex-start;
-        gap:20px;
+        align-items:center;
+        text-align:center;
     }
 
-    .movie-right{
+    .profile-right{
         width:100%;
     }
 
-    .movie-right button,
-    .remove-button{
-        width:100%;
-    }
-
-}
-
-@media(max-width:700px){
-
-    header h1{
-        font-size:52px;
-    }
-
-    .container{
-        padding:25px;
-    }
-
-    nav{
-        border-radius:20px;
+    .profile-right strong{
+        width:auto;
     }
 
     nav ul{
         flex-direction:column;
-        gap:18px;
+        padding:15px 0;
     }
 
-    .movie-left,
-    .rented-info{
-        flex-direction:column;
-        text-align:center;
-    }
-
-    .movie-left img,
-    .rented-info img{
-        width:160px;
-        height:auto;
-    }
-
-    .movie-details,
-    .rented-text{
-        width:100%;
+    nav li{
+        margin:10px 0;
     }
 
     footer{
@@ -676,27 +453,47 @@ input:hover{
         text-align:center;
     }
 
+    table{
+        display:block;
+        overflow-x:auto;
+    }
 }
 
-@media(max-width:500px){
+/* ===========================
+   SMALL PHONES
+=========================== */
+
+@media (max-width:600px){
+
+    header h1{
+        font-size:42px;
+    }
 
     .container{
-        width:95%;
         padding:20px;
     }
 
-    .login-box{
-        padding:25px;
+    .container h2{
+        font-size:28px;
+    }
+
+    tbody td{
+        font-size:18px;
+        padding:15px;
+    }
+
+    .rent-button,
+    .remove-button,
+    .login-button,
+    .register-button,
+    .profile-buttons button{
+        width:130px;
+        height:48px;
+        font-size:18px;
     }
 
     .profile-image{
         width:180px;
         height:180px;
     }
-
-    header h1{
-        font-size:42px;
-    }
-
 }
-
